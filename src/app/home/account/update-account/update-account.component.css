@@ -1,0 +1,79 @@
+.container {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.container .row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+}
+
+.container .row .col {
+  flex: 1;
+  padding: 25px 0;
+}
+
+.container .row .col .card {
+  border: 1px solid #112047;
+  border-radius: 10px;
+}
+
+.container .row .col .card .card-header {
+  border-bottom: 1px solid #112047;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  padding: 10px 10px;
+}
+
+.container .row .col .card .card-header i {
+  margin-right: 10px;
+}
+
+.container .row .col .card .card-body {
+  padding: 25px 10px;
+}
+
+.container .row .col .card .card-body .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .row .col .card .card-body .form-group label {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.container .row .col .card .card-body .form-group .form-control {
+  border: 1px solid #112047;
+  border-radius: 4px;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.container .row .col .card .card-footer {
+  border-top: 1px solid #112047;
+  padding: 8px;
+  display: flex;
+  gap: 10px;
+  flex: 1 1;
+}
+
+.container .row .col .card .card-footer .btn {
+  flex: 1;
+  padding: 6px 0;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #112047;
+  border-radius: 8px;
+}
+
+.container .row .col .card .card-footer .btn.btn-primary {
+  background-color: #1d98fe;
+  color: white;
+}
+
+.container .row .col .card .card-footer .btn.btn-cancel {
+  background-color: red;
+  color: white;
+}

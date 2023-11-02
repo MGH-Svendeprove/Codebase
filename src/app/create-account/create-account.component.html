@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="dot-wrapper">
+    <div *ngFor="let i of dot">
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="circle blue" id="c3"></div>
+      <div class="card" id="login">
+        <div class="card-header">
+          <h1>CodeBase</h1>
+          <h3>Create owner</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="accountForm">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" formControlName="username" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" formControlName="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Picture</label>
+              <input type="file" formControlName="picture" (change)="onSelectedFile($event)" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="createHandler(accountForm.value)">Create Owner</button>
+            <button type="reset" class="btn btn-danger" (click)="cancelHandler()">Cancel</button>
+          </form>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col center bg-dark-blue">
+      <div class="circle" id="c1"></div>
+      <div class="circle" id="c2"></div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="welcome-header">Please fill out the form</h1>
+          <p>All fields in the form is required, otherwise no account is created.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

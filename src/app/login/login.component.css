@@ -1,0 +1,168 @@
+.container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.container .dot-wrapper {
+  top: 30px;
+  right: 30px;
+  width: 200px;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.container .dot-wrapper .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+}
+
+.container .row {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  height: 100%;
+}
+
+.container .row .col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px;
+  height: 100%;
+  min-width: 50vw;
+  max-width: 50vw;
+  position: relative;
+}
+
+.container .row .col.bg-dark-blue {
+  color: #eff2f4;
+  background: #112047;
+}
+
+.container .row .col.center {
+  padding: 0 50px;
+  justify-content: center;
+}
+
+.container .row .col .circle {
+  width: 800px;
+  height: 800px;
+  border: 100px solid rgba(255,255,255,1);
+  border-radius: 50%;
+}
+
+.container .row .col .circle.blue {
+  width: 800px;
+  height: 800px;
+  border: 100px solid #112047;
+  border-radius: 50%;
+}
+
+.container .row .col .circle#c1 {
+  position: absolute;
+  top: -400px;
+  left: -400px;
+  opacity: .1;
+}
+
+.container .row .col .circle#c3.blue {
+  position: absolute;
+  top: -400px;
+  right: -400px;
+  opacity: .1;
+}
+
+.container .row .col .circle#c2 {
+  position: absolute;
+  bottom: -400px;
+  right: -400px;
+  opacity: .1;
+}
+
+.container .row .col .welcome-header {
+  font-size: 42px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.container .row .col .headline-2 {
+  font-size: 36px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.container .row .col p {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+.container .row .col .card#login {
+  width: 360px;
+}
+
+.container .row .col .card .card-header {
+  padding: 0 0 30px 0;
+}
+
+.container .row .col .card .card-header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.container .row .col .card .card-header h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container .row .col .card .card-body {
+  margin: 0;
+  padding: 15px 0;
+}
+
+.container .row .col .card .card-body .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.container .row .col .card .card-body .form-group .form-control, .container .row .col .card .card-body .form-group input[type="date"].form-control {
+  padding: 8px;
+  border: 1px solid #112047;
+  border-radius: 4px;
+}
+
+.container .row .col .card .card-body .btn {
+  margin: 0;
+  padding: 8px 0;
+  margin-top: 15px;
+  width: 100%;
+  border: 1px solid #112047;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.container .row .col .card .card-body .btn.btn-primary {
+  background-color: #1d98fe;
+  color: white;
+}
+
+.container .row .col .card .card-body .btn.btn-success {
+  background-color: green;
+  color: var(--bg-light);
+}

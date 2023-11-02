@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="dot-wrapper">
+    <div *ngFor="let i of dot">
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="circle blue" id="c3"></div>
+      <div class="card" id="login">
+        <div class="card-header">
+          <h2 class="headline-2">Codebase</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label>email</label>
+              <input type="text" formControlName="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="loginHandler(loginForm.value)">Login</button>
+            <button type="button" class="btn btn-success" (click)="createHandler()">Create Account</button>
+          </form>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col center bg-dark-blue">
+      <div class="circle" id="c1"></div>
+      <div class="circle" id="c2"></div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="welcome-header">Welcome back, Good to see you</h2>
+          <p class="text center">Login with your Email and Password.</p>
+          <p class="text center">Don't have an account, Then please create an account</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

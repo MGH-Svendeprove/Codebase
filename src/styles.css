@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+All imported fonts will be going in here, and will be given a global variable name inside the root.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/*
+All global variables for the css will be going into the root
+ */
+:root {
+  /*
+  All color codes will be stored here for this application
+   */
+  --bg-light: rgba(255,255,255,1);
+  --bg-blue: #008aff;
+
+  /*
+  All font names will be stored here ready for use.
+   */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Arial;
+}

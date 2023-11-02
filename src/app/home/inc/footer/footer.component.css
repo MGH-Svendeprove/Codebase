@@ -1,0 +1,40 @@
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10,9,12,1);
+  color: #a9d9c9;
+  position: absolute;
+}
+
+.footer .container {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.footer .container .row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.footer .container .row .col, .footer .container .row .col-xl {
+  flex: 1;
+  height: 120px;
+  max-height: 120px;
+}
+
+.footer .container .row .col {
+  padding: 6px 0;
+}
+
+.footer .container .row .col-xl {
+  padding: 6px 0;
+  height: fit-content;
+}
+
+.footer .container .row .col-xl.center {
+  display: flex;
+  justify-content: center;
+}

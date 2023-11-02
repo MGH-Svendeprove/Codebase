@@ -3,14 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { SetupComponent } from './setup/setup.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {JwtModule} from "@auth0/angular-jwt";
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { HomeComponent } from './home/home.component';
+import { FrontpageComponent } from './home/home/frontpage/frontpage.component';
+import { HeaderComponent } from './home/inc/header/header.component';
+import { FooterComponent } from './home/inc/footer/footer.component';
+import { UpdateAccountComponent } from './home/account/update-account/update-account.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SetupComponent,
+    CreateAccountComponent,
+    HomeComponent,
+    FrontpageComponent,
+    HeaderComponent,
+    FooterComponent,
+    UpdateAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem("token"),
+        allowedDomains: [window.location.host]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

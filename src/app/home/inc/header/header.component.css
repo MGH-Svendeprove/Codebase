@@ -1,0 +1,95 @@
+.header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #112047;
+}
+
+.header .container {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.header .container.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .container .brand {
+  margin: 0;
+  padding: 10px 0;
+  color: var(--bg-light);
+}
+
+.header .container .navbar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header .container .navbar .navbar-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  position: relative;
+  color: var(--bg-light);
+  text-decoration: none;
+  align-content: center;
+  line-height: 30px;
+}
+
+.header .container .navbar .navbar-item .account-picture {
+  width: auto;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.header .container .navbar .navbar-item .dropdown {
+  top: 50px;
+  right: 0;
+  width: 240px;
+  background: var(--bg-light);
+  border: 1px solid #112047;
+  position: absolute;
+  display: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.header .container .navbar .navbar-item .dropdown.show {
+  top: 50px;
+  right: 0;
+  width: 240px;
+  background: var(--bg-light);
+  border: 1px solid #112047;
+  position: absolute;
+  display: block;
+  border-radius: 0 0 10px 10px;
+}
+
+.header .container .navbar .navbar-item .dropdown .dropdown-item {
+  display: block;
+  padding: 5px 15px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #112047;
+}
+
+.header .container .navbar .navbar-item .dropdown .dropdown-item i {
+  width: 30px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.header .container .navbar .navbar-item .dropdown .dropdown-item:hover {
+  background-color: #112047;
+  color: var(--bg-light);
+}
+
+.header .container .navbar .navbar-item .dropdown .dropdown-item:hover:last-child {
+  border-radius: 0 0 10px 10px;
+}
