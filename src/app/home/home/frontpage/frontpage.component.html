@@ -1,6 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">
+      <h3>Featured Posts</h3>
+      <div class="message" [ngClass]="{'show': isActive}">
+        {{message.message}}
+      </div>
+      <div class="posts-wrapper" *ngIf="posts">
+        <div class="post-item" data-id="{{item.post_id}}" #read *ngFor="let item of posts" (click)="readPost(read)">
+          <div class="col">
+            <span class="info"><label>Author:</label>{{item.username ? item.username : 'deleted account'}}</span>
+            <span class="info"><label>Date:</label>{{item.post_datetime}}</span>
+            <span class="info"><label>Answers:</label>{{item.counter}}</span>
+            <span class="info"><label>Warning:</label>Report Post</span>
+          </div>
+          <div class="col-big">
+            <span class="info-big">{{item.subject}}</span>
+            <span class="info-big">
+          <div *ngIf="item">
+            {{ item.content }}
+          </div>
+        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Upcoming updates</h3>
+    </div>
   </div>
 </div>

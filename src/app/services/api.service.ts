@@ -88,4 +88,9 @@ export class ApiService {
   getAllAnswers(data: Ianswer): Observable<Ianswer[]> {
     return this.http.get<Ianswer[]>(this.baseURL + 'answers/selectAll.php?id=' + data.post_id);
   }
+
+  latestPosts(): Observable<Ipost[]> {
+    return this.http.get<Ipost[]>(this.baseURL + 'forum/latestPost.php');
+  }
+
 }
