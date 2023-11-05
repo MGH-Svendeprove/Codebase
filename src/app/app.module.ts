@@ -14,6 +14,13 @@ import { FrontpageComponent } from './home/home/frontpage/frontpage.component';
 import { HeaderComponent } from './home/inc/header/header.component';
 import { FooterComponent } from './home/inc/footer/footer.component';
 import { UpdateAccountComponent } from './home/account/update-account/update-account.component';
+import { ChangePasswordComponent } from './home/account/change-password/change-password.component';
+import { ForumComponent } from './home/forum/forum.component';
+import { CategoriesComponent } from './home/forum/categories/categories.component';
+import { ReadPostComponent } from './home/forum/read-post/read-post.component';
+import {HighlightService} from "./services/highlight.service";
+import { HowtoComponent } from './home/howto/howto.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +32,12 @@ import { UpdateAccountComponent } from './home/account/update-account/update-acc
     FrontpageComponent,
     HeaderComponent,
     FooterComponent,
-    UpdateAccountComponent
+    UpdateAccountComponent,
+    ChangePasswordComponent,
+    ForumComponent,
+    CategoriesComponent,
+    ReadPostComponent,
+    HowtoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +52,9 @@ import { UpdateAccountComponent } from './home/account/update-account/update-acc
       }
     })
   ],
-  providers: [],
+  providers: [
+    HighlightService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

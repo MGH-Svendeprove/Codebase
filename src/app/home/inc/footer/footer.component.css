@@ -1,15 +1,15 @@
 .footer {
+  background-color: rgba(10,9,12,1);
+  color: #a9d9c9;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(10,9,12,1);
-  color: #a9d9c9;
-  position: absolute;
+  position: sticky;
 }
 
 .footer .container {
   margin: 0 auto;
-  width: 75%;
+  width: 50%;
 }
 
 .footer .container .row {

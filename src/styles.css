@@ -2,6 +2,9 @@
 All imported fonts will be going in here, and will be given a global variable name inside the root.
  */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/*@import 'prismjs/themes/prism.css';*/
+@import 'prismjs/themes/prism-twilight.css';
+@import 'prismjs/plugins/toolbar/prism-toolbar.css';
 
 /*
 All global variables for the css will be going into the root

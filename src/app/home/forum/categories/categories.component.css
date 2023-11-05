@@ -1,0 +1,69 @@
+.container {
+  margin: 0 auto;
+  padding: 25px 0;
+  width: 50%;
+  min-height: calc(100vh - 202px);
+}
+
+.container .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 20px;
+}
+
+.container .wrapper .wrapper-item {
+  border: 1px solid #eff2f4;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+  width: 225px;
+  height: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 8px;
+}
+
+.container .wrapper .wrapper-item .logo-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .wrapper .wrapper-item .logo-container .logo {
+  width: calc(100% / 1.7);
+  height: fit-content;
+}
+
+.container .wrapper .wrapper-item .item-text {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-items: flex-start;
+}
+
+.container .wrapper .wrapper-item .title {
+  width: 100%;
+  min-height: 25px;
+  padding: 4px;
+  display: block;
+  text-align: center;
+}
+
+.container .wrapper .wrapper-item .counter {
+  width: 100%;
+  min-height: 25px;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container .wrapper .wrapper-item .counter p {
+  margin: 0;
+  padding: 0;
+}

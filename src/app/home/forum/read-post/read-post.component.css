@@ -1,0 +1,75 @@
+.container {
+  margin: 0 auto;
+  width: 50%;
+  padding: 25px 0;
+  min-height: calc(100vh - 202px);
+}
+
+.container .post-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.container .post-wrapper .col {
+  flex: auto 1;
+  margin-bottom: 25px;
+}
+
+.container .post-wrapper .col:first-child {
+  min-width: 200px;
+  max-width: 200px;
+  border-right: 1px solid #eff2f4;
+}
+
+.container .post-wrapper .col h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.container .post-wrapper .col div {
+  white-space: pre-wrap;
+}
+
+.container .post-wrapper .col .info {
+  width: 100%;
+  display: block;
+}
+
+.container .comment {
+  width: 100%;
+}
+
+.container .comment .comment-body, .container .comment .comment-footer {
+  width: 100%;
+}
+
+.container .comment .comment-body .form-control {
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+.container .comment .comment-footer {
+  padding: 10px 0;
+}
+
+.container .comment .comment-footer .btn {
+  padding: 6px 25px;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #112047;
+}
+
+.container .comment .comment-footer .btn.btn-comment {
+  background-color: #008aff;
+  color: white;
+}
+
+.container .comment .comment-footer .btn.btn-comment:hover {
+  background-color: #005299;
+  color: white;
+}

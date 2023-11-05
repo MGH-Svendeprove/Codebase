@@ -3,14 +3,15 @@
     <h2 class="brand">Codebase</h2>
     <nav class="navbar">
       <a routerLink="./" class="navbar-item">Home</a>
-      <a routerLink="./" class="navbar-item">Categories</a>
+      <a routerLink="categories" class="navbar-item">Categories</a>
+      <a routerLink="howto" class="navbar-item">How to</a>
       <span class="navbar-item" (click)="showDropdown()">
         <img src="{{picturePath}}{{account.picture}}" class="account-picture"><i class="fa fa-chevron-down"></i>
         <div class="dropdown" [ngClass]="{'show': isVisible}">
           <a routerLink="update-account" class="dropdown-item"><i class="fa fa-address-card"></i>Update Account</a>
-          <a routerLink="./" class="dropdown-item"><i class="fa fa-key"></i>Change Password</a>
+          <a routerLink="change-password" class="dropdown-item"><i class="fa fa-key"></i>Change Password</a>
           <a routerLink="./" class="dropdown-item"><i class="fa fa-folder-open"></i>My Posts</a>
-          <a routerLink="./" class="dropdown-item"><i class="fa fa-user-times"></i>Delete Account</a>
+          <span (click)="deleteAccount()" class="dropdown-item"><i class="fa fa-user-times"></i>Delete Account</span>
           <span (click)="logout()" class="dropdown-item"><i class="fa fa-sign-out"></i>Logout</span>
         </div>
       </span>

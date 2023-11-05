@@ -1,0 +1,186 @@
+.container {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 50%;
+  min-height: calc(100vh - 202px);
+}
+
+.container .forum-header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container .forum-header h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.container .forum-toolbar {
+  padding: 15px 0;
+  margin: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #112047;
+  width: 100%;
+}
+
+.container .forum-toolbar .btn {
+  background: transparent;
+  border: 1px solid #eff2f4;
+  padding: 8px 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.container .forum-toolbar .btn i {
+  margin-right: 10px;
+}
+
+.container .forum-toolbar .btn.btn-create {
+  background-color: #112047;
+  color: white;
+}
+
+.container .posts-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.container .posts-wrapper .post-item {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  width: 100%;
+  max-height: 112px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  border: 1px solid #eff2f4;
+}
+
+.container .posts-wrapper .post-item .col {
+  width: 260px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-right: 1px solid #eff2f4;
+}
+
+.container .posts-wrapper .post-item .col .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.container .posts-wrapper .post-item .col-big {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  align-content: flex-start;
+}
+
+.container .posts-wrapper .post-item .col-big .info-big {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-content: flex-start;
+  height: fit-content;
+  white-space: pre-wrap;
+}
+
+.container .posts-wrapper .post-item .col-big .info-big:first-child {
+  border-bottom: 1px solid #eff2f4;
+}
+
+.wrapper {
+  display: none;
+}
+
+.wrapper.show {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.wrapper .create-modal {
+  width: 800px;
+  height: fit-content;
+  background-color: #112047;
+  color: white;
+  border: 1px solid #eff2f4;
+  display: block;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.wrapper .create-modal .modal-header {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-body {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-body .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.wrapper .create-modal .modal-body .form-group label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.wrapper .create-modal .modal-body .form-group .form-control {
+  padding: 4px 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.wrapper .create-modal .modal-body .form-group textarea.form-control {
+  height: 300px;
+  resize: none;
+}
+
+.wrapper .create-modal .modal-footer {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-footer .btn {
+  padding: 8px 25px;
+  margin-right: 15px;
+  background: transparent;
+  border: 1px solid #eff2f4;
+  color: white;
+  cursor: pointer;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-create {
+  background-color: #008aff;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-create:hover {
+  background-color: #005299;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-cancel {
+  background-color: red;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-cancel:hover {
+  background-color: darkred;
+}

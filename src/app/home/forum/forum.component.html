@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="forum-header"><h2>{{category.cat_title}} Forum</h2></div>
+  <div class="forum-toolbar">
+        <span (click)="showModal()" class="btn btn-create" id="btn-modal"><i class="fa fa-plus"></i>Add Post</span>
+  </div>
+  <div class="message" [ngClass]="{'show': messageActive}">
+    {{message.message}}
+  </div>
+  <div class="posts-wrapper" *ngIf="posts">
+    <div class="post-item" data-id="{{item.post_id}}" #read *ngFor="let item of posts" (click)="readPost(read)">
+      <div class="col">
+        <span class="info"><label>Author:</label>{{item.username ? item.username : 'deleted account'}}</span>
+        <span class="info"><label>Date:</label>{{item.post_datetime}}</span>
+        <span class="info"><label>Answers:</label>{{item.counter}}</span>
+        <span class="info"><label>Warning:</label>Report Post</span>
+      </div>
+      <div class="col-big">
+        <span class="info-big">{{item.subject}}</span>
+        <span class="info-big">
+          <div *ngIf="item">
+            {{ item.content }}
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper" [ngClass]="{'show': isActive}">
+  <div class="create-modal">
+    <form [formGroup]="createForm">
+      <div class="modal-header">Create Forum Post</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" formControlName="subject" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select formControlName="category_id" class="form-control">
+            <option *ngFor="let item of categories" value="{{item.category_id}}">{{item.cat_title}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea formControlName="content" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="createHandler(createForm.value)" class="btn btn-create">Create Post</button>
+        <button type="reset" (click)="showModal()" class="btn btn-cancel">Close Modal</button>
+      </div>
+    </form>
+  </div>
+</div>
+

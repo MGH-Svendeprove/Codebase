@@ -33,6 +33,16 @@ export class HeaderComponent implements OnInit {
     //console.log(this.isVisible);
   }
 
+  deleteAccount() {
+    let usr: Iaccount = {
+      account_id: this.auth.id
+    }
+
+    this.api.deleteAccount(usr).subscribe(data => {
+      this.auth.logout();
+    });
+  }
+
   logout() {
     this.auth.logout();
   }

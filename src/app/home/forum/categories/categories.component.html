@@ -1,0 +1,14 @@
+<div class="container">
+  <h3>Forum Categories</h3>
+  <div class="wrapper">
+    <button class="wrapper-item" data-id="{{item.category_id}}" #posts (click)="showForum(posts)" *ngFor="let item of categories">
+      <div class="logo-container">
+        <img src="{{picturePath}}{{item.cat_picture}}" class="logo">
+      </div>
+      <div class="item-text">
+        <span class="title">{{item.cat_title}}</span>
+        <span class="counter"><p>Total:</p><span class="badge">{{item.cat_counter}}</span></span>
+      </div>
+    </button>
+  </div>
+</div>

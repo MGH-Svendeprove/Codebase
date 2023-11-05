@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="post-wrapper">
+      <div class="col">
+        <span class="info">{{post.username ? post.username : 'delete account'}}</span>
+        <span class="info">{{post.post_datetime}}</span>
+      </div>
+      <div class="col">
+        <h3>{{post.subject}}</h3>
+        <div [innerHTML]="post.content"></div>
+      </div>
+  </div>
+  <div class="comment">
+    <form [formGroup]="answerForm">
+      <div class="comment-body">
+        <textarea formControlName="answer_content" class="form-control"></textarea>
+      </div>
+      <div class="comment-footer">
+        <button type="submit" (click)="answerHandler(answerForm.value)" class="btn btn-comment">Save Answer</button>
+      </div>
+    </form>
+  </div>
+  <div class="message" [ngClass]="{'show': isActive}">
+      {{message.message}}
+  </div>
+  <div class="post-wrapper" *ngFor="let item of answers">
+      <div class="col">
+          <span class="info">{{item.username ? item.username : 'deleted account'}}</span>
+          <span class="info">{{item.answer_datetime}}</span>
+      </div>
+      <div class="col">
+          <div [innerHTML]="item.content"></div>
+      </div>
+  </div>
+</div>

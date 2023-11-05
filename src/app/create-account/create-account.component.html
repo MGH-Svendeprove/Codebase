@@ -10,7 +10,7 @@
       <div class="card" id="login">
         <div class="card-header">
           <h1>CodeBase</h1>
-          <h3>Create owner</h3>
+          <h3>Create Account</h3>
         </div>
         <div class="card-body">
           <form [formGroup]="accountForm">
@@ -30,7 +30,7 @@
               <label>Picture</label>
               <input type="file" formControlName="picture" (change)="onSelectedFile($event)" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary" (click)="createHandler(accountForm.value)">Create Owner</button>
+            <button type="submit" class="btn btn-primary" (click)="createHandler(accountForm.value)">Create Account</button>
             <button type="reset" class="btn btn-danger" (click)="cancelHandler()">Cancel</button>
           </form>
         </div>
