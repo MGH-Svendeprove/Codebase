@@ -46,6 +46,10 @@
   line-height: 30px;
 }
 
+.header .container .navbar .navbar-item:hover {
+  color: #008aff;
+}
+
 .header .container .navbar .navbar-item .account-picture {
   width: auto;
   height: 30px;

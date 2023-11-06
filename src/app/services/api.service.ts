@@ -93,4 +93,16 @@ export class ApiService {
     return this.http.get<Ipost[]>(this.baseURL + 'forum/latestPost.php');
   }
 
+  myPosts(data: Iaccount): Observable<Ipost[]> {
+    return this.http.get<Ipost[]>(this.baseURL + 'forum/myposts.php?id=' + data.account_id);
+  }
+
+  updatePost(data: any) {
+    return this.http.post(this.baseURL + 'forum/update.php', data);
+  }
+
+  deletePost(data: Ipost): Observable<Ipost> {
+    return this.http.get<Ipost>(this.baseURL + 'forum/delete.php?id=' + data.post_id);
+  }
+
 }

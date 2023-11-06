@@ -20,6 +20,7 @@ import { CategoriesComponent } from './home/forum/categories/categories.componen
 import { ReadPostComponent } from './home/forum/read-post/read-post.component';
 import {HighlightService} from "./services/highlight.service";
 import { HowtoComponent } from './home/howto/howto.component';
+import { MyPostsComponent } from './home/forum/my-posts/my-posts.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HowtoComponent } from './home/howto/howto.component';
     ForumComponent,
     CategoriesComponent,
     ReadPostComponent,
-    HowtoComponent
+    HowtoComponent,
+    MyPostsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,219 @@
+.message {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 50px;
+  background-color: lightpink;
+  display: none;
+}
+
+.message.show {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 50px;
+  background-color: lightpink;
+  display: block;
+}
+
+.message .message-wrapper {
+  margin: 0 auto;
+  padding: 15px 0;
+  width: 50%;
+}
+
+.message .message-wrapper.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.message .message-wrapper i {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 25px 0;
+  width: 50%;
+  height: calc(100vh - 202px);
+}
+
+.container h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.container .table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container .table thead tr {
+  border-bottom: 1px solid #eff2f4;
+}
+
+.container .table thead tr th {
+  margin: 0;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.container .table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.container .table tbody tr:nth-child(even) {
+  background-color: #888fa3;
+}
+
+.container .table tbody tr td {
+  padding: 8px 15px;
+}
+
+.container .table tbody tr td .btn-group {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.container .table tbody tr td .btn-group .btn {
+  padding: 4px 0;
+  flex: 1;
+  cursor: pointer;
+}
+
+.container .table tbody tr td .btn-group .btn:first-child {
+  border: 1px solid #112047;
+  border-right: none;
+  background: transparent;
+  border-radius: 4px 0 0 4px;
+}
+
+.container .table tbody tr td .btn-group .btn:last-child {
+  border: 1px solid #112047;
+  border-left: none;
+  background: transparent;
+  border-radius: 0 4px 4px 0;
+}
+
+.container .table tbody tr td .btn-group .btn.btn-edit {
+  background-color: #008aff;
+  color: white;
+}
+
+.container .table tbody tr td .btn-group .btn.btn-edit:hover {
+  background-color: #005299;
+  color: white;
+}
+
+.container .table tbody tr td .btn-group .btn.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+.container .table tbody tr td .btn-group .btn.btn-delete:hover {
+  background-color: darkred;
+  color: white;
+}
+
+.info-message {
+  padding: 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/*
+The edit modal will be going in here
+ */
+.wrapper {
+  display: none;
+}
+
+.wrapper.show {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.wrapper .create-modal {
+  width: 800px;
+  height: fit-content;
+  background-color: #112047;
+  color: white;
+  border: 1px solid #eff2f4;
+  display: block;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.wrapper .create-modal .modal-header {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-body {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-body .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.wrapper .create-modal .modal-body .form-group label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.wrapper .create-modal .modal-body .form-group .form-control {
+  padding: 4px 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.wrapper .create-modal .modal-body .form-group textarea.form-control {
+  height: 300px;
+  resize: none;
+}
+
+.wrapper .create-modal .modal-footer {
+  padding: 10px 25px;
+}
+
+.wrapper .create-modal .modal-footer .btn {
+  padding: 8px 25px;
+  margin-right: 15px;
+  background: transparent;
+  border: 1px solid #eff2f4;
+  color: white;
+  cursor: pointer;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-create {
+  background-color: #008aff;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-create:hover {
+  background-color: #005299;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-cancel {
+  background-color: red;
+  color: white;
+}
+
+.wrapper .create-modal .modal-footer .btn.btn-cancel:hover {
+  background-color: darkred;
+}

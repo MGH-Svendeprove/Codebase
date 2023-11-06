@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  position: sticky;
+  position: relative;
 }
 
 .footer .container {
@@ -27,6 +27,46 @@
 
 .footer .container .row .col {
   padding: 6px 0;
+}
+
+.footer .container .row .col div {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer .container .row .col div .cat {
+  width: auto;
+  height: 30px;
+}
+
+.footer .container .row .col h4 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.footer .container .row .col .footer-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer .container .row .col .footer-nav .nav-item {
+  display: block;
+}
+
+.footer .container .row .col .footer-nav .nav-item .nav-link {
+  padding: 4px 0;
+  display: block;
+  color: #008aff;
+  text-decoration: none;
+}
+
+.footer .container .row .col .footer-nav .nav-item .nav-link:hover {
+  color: darkgoldenrod;
 }
 
 .footer .container .row .col-xl {

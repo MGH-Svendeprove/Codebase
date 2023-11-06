@@ -11,6 +11,7 @@ import {CategoriesComponent} from "./home/forum/categories/categories.component"
 import {ForumComponent} from "./home/forum/forum.component";
 import {ReadPostComponent} from "./home/forum/read-post/read-post.component";
 import {HowtoComponent} from "./home/howto/howto.component";
+import {MyPostsComponent} from "./home/forum/my-posts/my-posts.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path: 'change-password', component: ChangePasswordComponent},
       {path: 'categories', component: CategoriesComponent},
       {path: 'forum/:category_id', component: ForumComponent},
-      {path: 'forum/post/:post_id', component: ReadPostComponent}
+      {path: 'forum/post/:post_id', component: ReadPostComponent},
+      {path: 'myposts', component: MyPostsComponent}
     ]}
 ];
 

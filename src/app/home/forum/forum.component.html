@@ -30,6 +30,7 @@
     <form [formGroup]="createForm">
       <div class="modal-header">Create Forum Post</div>
       <div class="modal-body">
+        <input type="hidden" formControlName="post_id">
         <div class="form-group">
           <label>Subject</label>
           <input type="text" formControlName="subject" class="form-control">

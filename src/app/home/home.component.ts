@@ -11,12 +11,17 @@ import {ApiService} from "../services/api.service";
 })
 export class HomeComponent implements OnInit {
 
+  dot: any = [];
+
   constructor(private auth: AuthService, private router: Router, private isActive: IsactiveService, private api: ApiService) {
   }
 
   ngOnInit() {
     if(!this.auth.authenticated) {
       this.router.navigate(['./login']);
+    }
+    while (this.dot.length < 50) {
+      this.dot[this.dot.length] = this.dot.length;
     }
   }
 

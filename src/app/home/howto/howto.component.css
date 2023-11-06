@@ -1,46 +1,47 @@
 .container {
-    margin: 0 auto;
-    padding: 25px 0;
-    width: 50%;
-    min-height: calc(100vh - 202px);
+  margin: 0 auto;
+  padding: 25px 0;
+  width: 50%;
+  min-height: calc(100vh - 202px);
 }
 
 .container h3 {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 15px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
 }
 
 .container p {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 .container details {
-    border: 1px solid #eff2f4;
-    padding: 8px 25px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  border: 1px solid #eff2f4;
+  padding: 8px 25px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .container details div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .container details div.text {
-    display: block;
-    white-space: pre-wrap;
+  display: block;
+  white-space: pre-wrap;
 }
 
 .container details div label {
-    width: 150px;
-    padding: 5px 0;
-    margin-top: 10px;
+  width: 150px;
+  padding: 5px 0;
+  margin-top: 10px;
 }
 
 .container details div span {
-    width: calc(100% - 150px);
-    margin-top: 10px;
-    padding: 5px 0;
+  width: calc(100% - 150px);
+  margin-top: 10px;
+  padding: 5px 0;
 }

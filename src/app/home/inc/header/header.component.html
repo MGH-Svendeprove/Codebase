@@ -10,7 +10,7 @@
         <div class="dropdown" [ngClass]="{'show': isVisible}">
           <a routerLink="update-account" class="dropdown-item"><i class="fa fa-address-card"></i>Update Account</a>
           <a routerLink="change-password" class="dropdown-item"><i class="fa fa-key"></i>Change Password</a>
-          <a routerLink="./" class="dropdown-item"><i class="fa fa-folder-open"></i>My Posts</a>
+          <a routerLink="myposts" class="dropdown-item"><i class="fa fa-folder-open"></i>My Posts</a>
           <span (click)="deleteAccount()" class="dropdown-item"><i class="fa fa-user-times"></i>Delete Account</span>
           <span (click)="logout()" class="dropdown-item"><i class="fa fa-sign-out"></i>Logout</span>
         </div>
