@@ -12,6 +12,9 @@ import {ForumComponent} from "./home/forum/forum.component";
 import {ReadPostComponent} from "./home/forum/read-post/read-post.component";
 import {HowtoComponent} from "./home/howto/howto.component";
 import {MyPostsComponent} from "./home/forum/my-posts/my-posts.component";
+import {AdminComponent} from "./admin/admin.component";
+import {DashboardComponent} from "./admin/dashboard/dashboard.component";
+import {ReportsComponent} from "./admin/reports/reports.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -28,6 +31,11 @@ const routes: Routes = [
       {path: 'forum/:category_id', component: ForumComponent},
       {path: 'forum/post/:post_id', component: ReadPostComponent},
       {path: 'myposts', component: MyPostsComponent}
+    ]},
+  {path: 'admin', pathMatch: 'full', redirectTo: 'admin/dashboard'},
+  {path: 'admin', component: AdminComponent, children: [
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'reports', component: ReportsComponent}
     ]}
 ];
 

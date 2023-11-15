@@ -7,6 +7,7 @@ import {Iaccount} from "../interfaces/iaccount";
 import {Icategory} from "../interfaces/icategory";
 import {Ipost} from "../interfaces/ipost";
 import {Ianswer} from "../interfaces/ianswer";
+import {Ireport} from "../interfaces/ireport";
 
 @Injectable({
   providedIn: 'root'
@@ -103,6 +104,29 @@ export class ApiService {
 
   deletePost(data: Ipost): Observable<Ipost> {
     return this.http.get<Ipost>(this.baseURL + 'forum/delete.php?id=' + data.post_id);
+  }
+
+  /*
+  All endpoints for the report section will be going here.
+   */
+  reportpost(data: any) {
+    return this.http.post(this.baseURL + 'reports/insert.php', data);
+  }
+
+  selectReports(): Observable<Ireport[]> {
+    return this.http.get<Ireport[]>(this.baseURL + 'reports/select.php');
+  }
+
+  countNewReports(): Observable<any> {
+    return this.http.get(this.baseURL + 'reports/counter.php');
+  }
+
+  countAllReports(): Observable<any> {
+    return this.http.get(this.baseURL + 'reports/countAll.php');
+  }
+
+  updateReport(data: any) {
+    return this.http.post(this.baseURL + 'reports/update.php', data);
   }
 
 }

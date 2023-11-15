@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Icategory} from "../../interfaces/icategory";
 import {Ipost} from "../../interfaces/ipost";
 import {ApiService} from "../../services/api.service";
@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../services/auth.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Iaccount} from "../../interfaces/iaccount";
+import {Ireport} from "../../interfaces/ireport";
 
 
 @Component({
@@ -16,6 +17,8 @@ import {Iaccount} from "../../interfaces/iaccount";
 
 export class ForumComponent implements OnInit {
 
+  @ViewChild('snippet') snipper!: ElementRef;
+
   category: Icategory = {};
   categories: Icategory[] = [];
   posts: Ipost[] = [];
@@ -24,11 +27,27 @@ export class ForumComponent implements OnInit {
   message: any = {};
   messageActive: boolean = false;
   code: string | null = "";
+  snippets: any[] = [
+    {language: "Angular", code: "<pre class='language-typescript'><code>Enter code here...</code></pre>"},
+    {language: "C++", code: "<pre class='language-clike'><code>Enter code here...</code></pre>"},
+    {language: "C#", code: "<pre class='language-csharp'><code>Enter code here...</code></pre>"},
+    {language: "CSS", code: "<pre class='language-css'><code>Enter code here...</code></pre>"},
+    {language: "HTML", code: "<pre class='language-markup'><code>Enter code here...</code></pre>"},
+    {language: "JavaScript", code: "<pre class='language-javascript'><code>Enter code here...</code></pre>"},
+    {language: ".NET Core", code: "<pre class='language-dotnet'><code>Enter code here...</code></pre>"},
+    {language: "PHP", code: "<pre class='language-php'><code>Enter code here...</code></pre>"},
+    {language: "Python", code: "<pre class='language-python'><code>Enter code here...</code></pre>"},
+    {language: "React", code: "<pre class='language-typescript'><code>Enter code here...</code></pre>"},
+    {language: "TypeScript", code: "<pre class='language-typescript'><code>Enter code here...</code></pre>"},
+    {language: "Vue.js", code: "<pre class='language-typescript'><code>Enter code here...</code></pre>"}
+  ];
 
   createForm = new FormGroup({
+    post_id: new FormControl(),
     subject: new FormControl(),
     category_id: new FormControl(),
     content: new FormControl(),
+    snippet: new FormControl()
   });
 
   constructor(private api: ApiService, private router: Router, private route: ActivatedRoute, private auth: AuthService) {
@@ -115,5 +134,33 @@ export class ForumComponent implements OnInit {
 
     this.router.navigate(['./home/forum/post', post.post_id], {state: {data: post}});
 
+  }
+
+  insertSnippet(value: string) {
+    const contentControl = this.createForm.controls.content;
+    const curPos = contentControl.value.slice(0, contentControl.value.selectionStart);
+    const text_to_insert = value;
+    const textAfterCursor = contentControl.value.slice(0, contentControl.value.selectionStart);
+
+    contentControl.setValue(curPos + text_to_insert);
+    this.snipper.nativeElement.selectedIndex = 0;
+  }
+
+  reportPost(event: any) {
+    let post: Ireport = {
+      post_id: event.getAttribute('id'),
+      account_id: this.auth.id,
+      subject: event.getAttribute('title')
+    }
+
+    let formData = new FormData();
+    formData.append('account_id', post.account_id);
+    formData.append('post_id', post.post_id);
+    formData.append('reported', 'no');
+    formData.append('subject', post.subject);
+
+    this.api.reportpost(formData).subscribe(data => {
+      console.log(data);
+    });
   }
 }

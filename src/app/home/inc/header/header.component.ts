@@ -12,6 +12,7 @@ import {Iaccount} from "../../../interfaces/iaccount";
 export class HeaderComponent implements OnInit {
 
   account: Iaccount = {};
+  role: any = "";
   isVisible: boolean = false;
   picturePath: string = "https://www.jp-pro.dk/codebase/assets/img/accounts/uploads/";
   constructor(private api: ApiService, private auth: AuthService, private router: Router, private route: ActivatedRoute) {
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
     let account: Iaccount = {
       account_id: this.auth.id
     }
+    this.role = this.auth.role;
     this.api.getAccount(account).subscribe(data => {
       this.account = data;
       //console.log(usr);

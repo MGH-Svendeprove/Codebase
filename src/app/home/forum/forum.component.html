@@ -7,14 +7,14 @@
     {{message.message}}
   </div>
   <div class="posts-wrapper" *ngIf="posts">
-    <div class="post-item" data-id="{{item.post_id}}" #read *ngFor="let item of posts" (click)="readPost(read)">
+    <div class="post-item" data-id="{{item.post_id}}" #read *ngFor="let item of posts">
       <div class="col">
         <span class="info"><label>Author:</label>{{item.username ? item.username : 'deleted account'}}</span>
         <span class="info"><label>Date:</label>{{item.post_datetime}}</span>
         <span class="info"><label>Answers:</label>{{item.counter}}</span>
-        <span class="info"><label>Warning:</label>Report Post</span>
+        <span class="info"><label>Warning:</label><div class="btn btn-report" #report data-id="{{item.post_id}}" data-title="{{item.subject}}" (click)="reportPost(report)"><i class="fa fa-flag"></i>Report Post</div></span>
       </div>
-      <div class="col-big">
+      <div class="col-big" (click)="readPost(read)">
         <span class="info-big">{{item.subject}}</span>
         <span class="info-big">
           <div *ngIf="item">
@@ -43,7 +43,13 @@
         </div>
         <div class="form-group">
           <label>Description</label>
-          <textarea formControlName="content" class="form-control"></textarea>
+          <textarea formControlName="content" id="content" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Code Snippet</label>
+          <select formControlName="snippet" #snippet class="form-control" (change)="insertSnippet(snippet.value)">
+            <option *ngFor="let snip of snippets" value="{{snip.code}}">{{snip.language}}</option>
+          </select>
         </div>
       </div>
       <div class="modal-footer">

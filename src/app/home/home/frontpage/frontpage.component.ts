@@ -3,6 +3,7 @@ import {Ipost} from "../../../interfaces/ipost";
 import {ApiService} from "../../../services/api.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
+import {Ireport} from "../../../interfaces/ireport";
 
 @Component({
   selector: 'app-frontpage',
@@ -41,6 +42,27 @@ export class FrontpageComponent implements OnInit {
     }
 
     this.router.navigate(['./home/forum/post', post.post_id], {state: {data: post}});
+
+  }
+
+  reportPost(event: any) {
+
+    let post: Ireport = {
+      post_id: event.getAttribute('id'),
+      account_id: this.auth.id,
+      subject: event.getAttribute('title')
+    }
+
+
+    let formData = new FormData();
+    formData.append('account_id', post.account_id);
+    formData.append('post_id', post.post_id);
+    formData.append('reported', 'no');
+    formData.append('subject', post.subject);
+
+    this.api.reportpost(formData).subscribe(data => {
+      console.log(data);
+    });
 
   }
 }

@@ -1,0 +1,338 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 25px;
+  width: calc(100vw - 280px);
+  background-color: rgba(199,199,199);
+  overflow-y: auto;
+  min-height: calc(100vh - 62px);
+  height: fit-content;
+  max-height: fit-content;
+}
+
+.container .row {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.container .row .card {
+  background-color: rgba(255,255,255);
+  border-radius: 10px;
+  flex: 1;
+  height: fit-content;
+  padding: 0px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 1px solid #eff2f4;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.container .row .card .card-header {
+  padding: 20px 20px;
+  width: 100%;
+  background: #eff2f4;
+  border-radius: 10px 10px 0 0;
+}
+
+.container .row .card .card-header i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.container .row .card .card-header .card-text {
+  color: #112047;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+.container .row .card .card-body {
+  padding: 30px 0 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container .row .card .card-body .table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container .row .card .card-body .table thead tr {
+  border-bottom: 1px solid #eff2f4;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.container .row .card .card-body .table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+.container .row .card .card-body .table tbody tr:nth-child(even) {
+  background-color: #eff2f4;
+}
+
+.container .row .card .card-body .table thead tr th {
+  width: auto;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(1) {
+  width: 150px;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(4){
+  width: 250px;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(5),
+.container .row .card .card-body .table thead tr th:nth-child(6) {
+  width: 150px;
+}
+
+.container .row .card .card-body .table tbody tr td {
+  padding: 10px 0 10px 0;
+  text-indent: 20px;
+}
+
+.container .row .card .card-body .table tbody tr td .badge {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.container .row .card .card-body .table tbody tr td .badge.deleted {
+  background-color: red;
+  color: white;
+}
+.container .row .card .card-body .table tbody tr td .badge.modified {
+  background-color: orange;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .badge.pending {
+  background-color: #287a00;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #112047;
+  width: 35px;
+  padding: 3px 0;
+  border: 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-view {
+  background-color: darkorange;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-view:hover {
+  background-color: darkgoldenrod;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-edit {
+  background-color: #287a00;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-edit:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-delete:hover {
+  background-color: darkred;
+  color: white;
+}
+
+.modal-wrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+}
+
+.modal-wrapper#paper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+}
+
+.modal-wrapper#paper.paper-show {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modal-wrapper#paper .close-paper {
+  right: 50px;
+  top: 50px;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+}
+
+.modal-wrapper#paper .close-paper:hover {
+  color: #112047;
+}
+
+.modal-wrapper#paper .paper-a4 {
+  width: 21cm;
+  height: 26cm;
+  background: white;
+  padding: 2cm 1.5cm;
+}
+
+.modal-wrapper#paper .paper-a4 .title {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.modal-wrapper#paper .paper-a4 .row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 1cm;
+}
+
+.modal-wrapper#paper .paper-a4 .row .author, .modal-wrapper#paper .paper-a4 .row .date {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-wrapper#modal.modal-show {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modal-wrapper#modal .create-modal {
+  width: 800px;
+  height: fit-content;
+  background-color: #112047;
+  color: white;
+  border: 1px solid #eff2f4;
+  display: block;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.modal-wrapper#modal .create-modal .modal-header {
+  padding: 10px 25px;
+}
+
+.modal-wrapper#modal .create-modal .modal-body {
+  padding: 10px 25px;
+}
+
+.modal-wrapper#modal .create-modal .modal-body .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.modal-wrapper#modal .create-modal .modal-body .form-group label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.modal-wrapper#modal .create-modal .modal-body .form-group .form-control {
+  padding: 4px 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.modal-wrapper#modal .create-modal .modal-body .form-group textarea.form-control {
+  height: 300px;
+  resize: none;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer {
+  padding: 10px 25px;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer .btn {
+  padding: 8px 25px;
+  margin-right: 15px;
+  background: transparent;
+  border: 1px solid #eff2f4;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer .btn.btn-create {
+  background-color: #008aff;
+  color: white;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer .btn.btn-create:hover {
+  background-color: #005299;
+  color: white;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer .btn.btn-cancel {
+  background-color: red;
+  color: white;
+}
+
+.modal-wrapper#modal .create-modal .modal-footer .btn.btn-cancel:hover {
+  background-color: darkred;
+}

@@ -21,6 +21,10 @@ import { ReadPostComponent } from './home/forum/read-post/read-post.component';
 import {HighlightService} from "./services/highlight.service";
 import { HowtoComponent } from './home/howto/howto.component';
 import { MyPostsComponent } from './home/forum/my-posts/my-posts.component';
+import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AdminHeaderComponent } from './admin/inc/admin-header/admin-header.component';
+import { ReportsComponent } from './admin/reports/reports.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { MyPostsComponent } from './home/forum/my-posts/my-posts.component';
     CategoriesComponent,
     ReadPostComponent,
     HowtoComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    AdminComponent,
+    DashboardComponent,
+    AdminHeaderComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,

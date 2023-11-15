@@ -1,0 +1,175 @@
+.dashboard {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 25px;
+  width: calc(100vw - 280px);
+  background-color: rgba(199,199,199);
+  overflow-y: auto;
+  min-height: calc(100vh - 62px);
+  height: fit-content;
+  max-height: fit-content;
+}
+
+.dashboard .row {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.dashboard .row .card {
+  background-color: rgba(255,255,255);
+  border-radius: 10px;
+  flex: 1;
+  height: fit-content;
+  padding: 0px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 1px solid #eff2f4;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.dashboard .row .card .card-header {
+  padding: 20px 20px;
+  width: 100%;
+  background: #eff2f4;
+  border-radius: 10px 10px 0 0;
+}
+
+.dashboard .row .card .card-header i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.dashboard .row .card .card-header .card-text {
+  color: #112047;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+.dashboard .row .card .card-body {
+  padding: 30px 0 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard .row .card .card-body .row {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0 0 0;
+  margin-bottom: 0;
+}
+
+.dashboard .row .card .card-body .row .col {
+  flex: 1 1;
+}
+
+.dashboard .row .card .card-body span {
+  font-size: 36px;
+}
+
+.dashboard .row .card .card-body span.text-primary {
+  color: #1d98fe;
+}
+
+.dashboard .row .card .card-body span.text-danger {
+  color: red;
+}
+
+.dashboard .row .card .card-body span.text-warning {
+  color: darkorange;
+}
+
+.dashboard .row .card .card-body span.text-success {
+  color: green;
+}
+
+.dashboard .row .card .card-body span .online {
+  color: #287a00;
+}
+
+.dashboard .row .card .card-body span .offline {
+  color: red;
+}
+
+.dashboard .row .card .card-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard .row .card .card-body table thead tr {
+  border-bottom: 1px solid #112047;
+}
+
+.dashboard .row .card .card-body table thead tr th {
+  text-align: left;
+  font-weight: bold;
+}
+
+.dashboard .row .card .card-body table tbody tr td {
+  padding: 5px 0;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus {
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  border: 1px solid #112047;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus.online {
+  background-color: green;
+}
+
+.dashboard .row .card .card-body table tbody tr td .onlineStatus.offline {
+  background-color: red;
+}
+
+.dashboard .row .card .card-body#reports {
+  padding: 0;
+  display: block;
+}
+
+.dashboard .row .card .card-body#reports .report-item {
+  font-size: 18px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #eff2f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.dashboard .row .card .card-body#reports .report-item:last-child {
+  border-bottom: 0;
+}
+
+.dashboard .row .card .card-body#reports .report-item#message.show {
+  font-size: 18px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #eff2f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  display: block;
+}
+
+.dashboard .row .card .card-body#reports .report-item#message {
+  font-size: 18px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #eff2f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  display: none;
+}

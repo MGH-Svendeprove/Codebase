@@ -11,7 +11,7 @@
             <span class="info"><label>Author:</label>{{item.username ? item.username : 'deleted account'}}</span>
             <span class="info"><label>Date:</label>{{item.post_datetime}}</span>
             <span class="info"><label>Answers:</label>{{item.counter}}</span>
-            <span class="info"><label>Warning:</label>Report Post</span>
+            <span class="info"><label>Warning:</label><div class="btn btn-report" data-id="{{item.post_id}}" data-title="{{item.subject}}" #report (click)="reportPost(report)"><i class="fa fa-flag"></i>Report Post</div></span>
           </div>
           <div class="col-big" data-id="{{item.post_id}}" #read (click)="readPost(read)">
             <span class="info-big">{{item.subject}}</span>

@@ -28,7 +28,10 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/prismjs/prism.js"
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
+              "node_modules/prismjs/plugins/toolbar/prism-toolbar.js",
+              "node_modules/prismjs/plugins/inline-color/prism-inline-color.js"
             ]
           },
           "configurations": {

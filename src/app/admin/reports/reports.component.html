@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-flag"></i>
+        <span class="card-text">Reports</span>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Status</th>
+            <th>Subject</th>
+            <th>Reported By</th>
+            <th>Reported Time</th>
+            <th>Processed</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of reports">
+            <td><span class="badge" [ngClass]="{
+            'pending': item.statusCode == 1,
+            'modified': item.statusCode == 2,
+            'deleted': item.statusCode == 3
+            }">{{item.statusText}}</span></td>
+            <td>{{item.subject}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.report_datetime}}</td>
+            <td>{{item.reported}}</td>
+            <td>
+              <div class="btn-group-inline">
+                <button type="button" class="btn btn-view" #view data-id="{{item.post_id}}" (click)="getSinglePost(view)"><i class="fa fa-eye"></i></button>
+                <button type="button" class="btn btn-edit" #edit data-id="{{item.post_id}}" data-title="{{item.report_id}}" (click)="editSinglePost(edit)"><i class="fa fa-pencil"></i></button>
+                <button type="button" class="btn btn-delete"><i class="fa fa-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-wrapper" id="paper" [ngClass]="{'paper-show': paperIsActive}">
+  <div class="close-paper"><i class="fa fa-times" (click)="closePaper()"></i></div>
+  <div class="paper-a4">
+    <h2 class="title">{{post.subject}}</h2>
+    <div class="row">
+      <h5 class="author">Author: {{post.username}}</h5>
+      <h5 class="date">Published: {{post.post_datetime}}</h5>
+    </div>
+    <div class="content" [innerHTML]="post.content"></div>
+  </div>
+</div>
+
+<div class="modal-wrapper" id="modal" [ngClass]="{'modal-show': modalIsActive}">
+  <div class="create-modal">
+    <form [formGroup]="editForm">
+      <input type="text" formControlName="post_id">
+      <input type="text" formControlName="account_id">
+      <input type="text" formControlName="report_id">
+      <input type="text" formControlName="reported" [value]="">
+      <div class="modal-header">Modify Forum Post</div>
+      <div class="modal-body">
+        <input type="hidden" formControlName="post_id">
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" formControlName="subject" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select formControlName="category_id" class="form-control">
+            <option *ngFor="let item of categories" value="{{item.category_id}}">{{item.cat_title}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea formControlName="content" id="content" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Code Snippet</label>
+          <select formControlName="snippet" #snippet class="form-control" (change)="insertSnippet(snippet.value)">
+            <option *ngFor="let snip of snippets" value="{{snip.code}}">{{snip.language}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="updateHandler(editForm.value)" class="btn btn-create">Modify Post</button>
+        <button type="reset" (click)="closeModal()" class="btn btn-cancel">Close Modal</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="dashboard" id="dashboard">
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><span class="card-text"><i class="fa fa-users"></i>Users</span></div>
+      <div class="card-body"><span class="text-primary">0</span></div>
+      <div class="card-footer"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text"><i class="fa fa-flag"></i>Reports</span></div>
+      <div class="card-body"><span class="text-warning">{{reportsCount.total}}</span></div>
+      <div class="card-footer"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text"><i class="fa fa-folder-open"></i>Forum Posts</span></div>
+      <div class="card-body"><span class="text-success">0</span></div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><span class="card-text"><i class="fa fa-rss"></i>Newest Posts</span></div>
+      <div class="card-body"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-text"><i class="fa fa-flag"></i>Newest Reports</span></div>
+      <div class="card-body" id="reports">
+        <div class="report-item" id="message" [ngClass]="{'show': messageStatus}">{{message.message}}</div>
+        <div class="report-item" *ngFor="let item of reports">
+          <p class="report-title">{{item.subject}}</p>
+          <p class="report-time">{{item.report_datetime}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

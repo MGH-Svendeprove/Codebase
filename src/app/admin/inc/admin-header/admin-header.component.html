@@ -1,0 +1,46 @@
+<div class="container">
+  <aside class="sidebar show">
+    <div class="sidebar-header">
+      <!--      <img src="{{urlPath}}logo/CB-Logo.png" class="header-logo" title="Codebase Logo" alt="Codebase Logo">-->
+      <h2>Codebase</h2>
+      <div class="header-options">
+        <ul class="options">
+          <li class="options-item" (click)="toggleUserInfoMenu()"><i class="fa fa-user-circle-o"></i><span class="online-status"></span>
+            <div class="user-info" [ngClass]="{'show': isUserInfoActive}">
+              <div class="info-header">
+                <span class="info-text">Signed in as</span>
+                <span class="info-text">{{admin.email}}</span>
+              </div>
+              <div class="info-body">
+                Usermenu...
+              </div>
+              <div class="info-footer">
+                <span class="button" (click)="closeAdmin()"><i class="fa fa-sign-out"></i><span>Close Admin</span></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="{{picturePath}}assets/img/accounts/uploads/{{admin.picture}}" class="profile-picture">
+      <div class="profile-info">
+        <span class="info-name">{{admin.username}}</span>
+        <span class="info-email">{{admin.email}}</span>
+      </div>
+    </div>
+    <div class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-text">General</li>
+        <li class="nav-item"><a routerLink="./dashboard" class="nav-link"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+        <li class="nav-item"><a routerLink="reports" class="nav-link"><i class="fa fa-flag"></i><span>Reported Posts</span></a></li>
+      </ul>
+    </div>
+  </aside>
+  <header class="topbar">
+    <ul class="topbar-nav">
+      <li class="nav-item"><i class="fa fa-arrows-alt" aria-hidden="true" title="Fullscreen F11"></i></li>
+      <li class="nav-item"><i class="fa fa-flag" aria-hidden="true"></i><span class="badge">{{reportsNumber.total}}</span></li>
+    </ul>
+  </header>
+</div>
