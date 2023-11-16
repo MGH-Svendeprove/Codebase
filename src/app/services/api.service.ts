@@ -8,13 +8,14 @@ import {Icategory} from "../interfaces/icategory";
 import {Ipost} from "../interfaces/ipost";
 import {Ianswer} from "../interfaces/ianswer";
 import {Ireport} from "../interfaces/ireport";
+import {Irole} from "../interfaces/irole";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  baseURL = 'https://www.jp-pro.dk/codebase/api/';
+  baseURL = 'https://jp-pro.dk/codebase/api/';
 
   header = new HttpHeaders({
     'Content-Type': 'application/json; charset=UTF-8'
@@ -59,11 +60,35 @@ export class ApiService {
     return this.http.get<Iaccount>(this.baseURL + 'accounts/select.php?id=' + account.account_id);
   }
 
+  getAllAccounts(): Observable<Iaccount[]> {
+    return this.http.get<Iaccount[]>(this.baseURL + 'accounts/accounts.php');
+  }
+
+  countAccounts() {
+    return this.http.get(this.baseURL + 'accounts/countAccounts.php');
+  }
+
+  getAllRoles(): Observable<Irole[]> {
+    return this.http.get<Irole[]>(this.baseURL + 'roles/selectAll.php');
+  }
+
+  updateRole(data: any) {
+    return this.http.post(this.baseURL + 'accounts/updateRole.php', data);
+  }
+
   /*
     Here we have the complete forum part of the API service, with Create, Updates, Delete and Read
    */
   getCategories(): Observable<Icategory[]> {
     return this.http.get<Icategory[]>(this.baseURL + 'categories/selectAll.php');
+  }
+
+  insertCategory(data: any) : Observable<Icategory> {
+    return this.http.post<Icategory>(this.baseURL + 'categories/insert.php', data);
+  }
+
+  updateCategory(data: any) {
+    return this.http.post(this.baseURL + 'categories/update.php', data);
   }
 
   getCategoryName(data: Icategory): Observable<Icategory> {
@@ -106,6 +131,10 @@ export class ApiService {
     return this.http.get<Ipost>(this.baseURL + 'forum/delete.php?id=' + data.post_id);
   }
 
+  countAllPosts() {
+    return this.http.get(this.baseURL + 'forum/countPosts.php');
+  }
+
   /*
   All endpoints for the report section will be going here.
    */
@@ -127,6 +156,10 @@ export class ApiService {
 
   updateReport(data: any) {
     return this.http.post(this.baseURL + 'reports/update.php', data);
+  }
+
+  sendmail(data: any) {
+    return this.http.post(this.baseURL + 'report/sendmail.php', data);
   }
 
 }

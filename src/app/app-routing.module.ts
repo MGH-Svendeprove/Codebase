@@ -15,6 +15,8 @@ import {MyPostsComponent} from "./home/forum/my-posts/my-posts.component";
 import {AdminComponent} from "./admin/admin.component";
 import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 import {ReportsComponent} from "./admin/reports/reports.component";
+import {AdminCategoriesComponent} from "./admin/admin-categories/admin-categories.component";
+import {AdminAccountsComponent} from "./admin/admin-accounts/admin-accounts.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -35,7 +37,9 @@ const routes: Routes = [
   {path: 'admin', pathMatch: 'full', redirectTo: 'admin/dashboard'},
   {path: 'admin', component: AdminComponent, children: [
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'reports', component: ReportsComponent}
+      {path: 'reports', component: ReportsComponent},
+      {path: 'category', component: AdminCategoriesComponent},
+      {path: 'accounts', component: AdminAccountsComponent}
     ]}
 ];
 

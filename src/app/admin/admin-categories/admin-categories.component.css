@@ -1,0 +1,280 @@
+.container {
+  top: 62px;
+  left: 280px;
+  position: absolute;
+  padding: 25px;
+  width: calc(100vw - 280px);
+  background-color: rgba(199,199,199);
+  overflow-y: auto;
+  min-height: calc(100vh - 62px);
+  max-height: calc(100vh - 62px);
+  height: fit-content;
+
+}
+
+.container .row {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.container .row .card {
+  background-color: rgba(255,255,255);
+  border-radius: 10px;
+  flex: 1;
+  height: fit-content;
+  padding: 0px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 1px solid #eff2f4;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.container .row .card .card-header {
+  padding: 20px 20px;
+  width: 100%;
+  background: #eff2f4;
+  border-radius: 10px 10px 0 0;
+}
+
+.container .row .card .card-header i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.container .row .card .card-header .card-text {
+  color: #112047;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+.container .row .card .card-toolbar {
+  border-bottom: 1px solid #eff2f4;
+  padding: 10px;
+  width: 100%;
+}
+
+.container .row .card .card-toolbar .toolbar-item {
+  border: 1px solid #112047;
+  padding: 3px 10px;
+  cursor: pointer;
+  background: rgba(199,199,199,0.5);
+  border-radius: 4px;
+}
+
+.container .row .card .card-toolbar .toolbar-item:hover {
+  background: rgba(199,199,199);
+}
+
+.container .row .card .card-form {
+  border-bottom: 1px solid #eff2f4;
+  padding: 10px;
+  width: 100%;
+  display: none;
+}
+
+.container .row .card .card-form.show {
+  border-bottom: 1px solid #eff2f4;
+  padding: 10px;
+  width: 100%;
+  display: block;
+}
+
+.container .row .card .card-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px;
+}
+
+.container .row .card .card-form .form-group .form-control {
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #112047;
+  outline: none;
+}
+
+.container .row .card .card-form .btn-group {
+  width: 100%;
+  display: flex;
+}
+
+.container .row .card .card-form .btn-group .btn {
+  margin-right: 20px;
+  border: 1px solid #112047;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-close {
+  background: red;
+  color: white;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-close:hover {
+  background: darkred;
+  color: white;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-create {
+  background: #008aff;
+  color: white;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-create:hover {
+  background: #005299;
+  color: white;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-update {
+  background: orange;
+  color: #112047;
+}
+
+.container .row .card .card-form .btn-group .btn.btn-update:hover {
+  background: darkorange;
+  color: #112047;
+}
+
+.container .row .card .card-body {
+  padding: 30px 0 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container .row .card .card-body .table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container .row .card .card-body .table thead tr {
+  border-bottom: 1px solid #eff2f4;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.container .row .card .card-body .table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+.container .row .card .card-body .table tbody tr:nth-child(even) {
+  background-color: #eff2f4;
+}
+
+.container .row .card .card-body .table thead tr th {
+  width: auto;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(1) {
+  width: auto;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(3){
+  width: 80px;
+}
+
+.container .row .card .card-body .table thead tr th:nth-child(5),
+.container .row .card .card-body .table thead tr th:nth-child(6) {
+  width: 150px;
+}
+
+.container .row .card .card-body .table tbody tr td {
+  padding: 10px 0 10px 0;
+  text-indent: 20px;
+}
+
+.container .row .card .card-body .table tbody tr td .badge {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.container .row .card .card-body .table tbody tr td .logo {
+  width: auto;
+  height: 25px;
+}
+
+.container .row .card .card-body .table tbody tr td .badge.deleted {
+  background-color: red;
+  color: white;
+}
+.container .row .card .card-body .table tbody tr td .badge.modified {
+  background-color: orange;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .badge.pending {
+  background-color: #287a00;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .table-link {
+  cursor: pointer;
+  color: #005299;
+}
+
+.container .row .card .card-body .table tbody tr td .table-link:hover {
+  text-decoration: underline;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #112047;
+  border-radius: 4px;
+  width: 35px;
+  padding: 3px 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-view {
+  background-color: darkorange;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-view:hover {
+  background-color: darkgoldenrod;
+  color: #112047;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-edit {
+  background-color: #287a00;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-edit:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+.container .row .card .card-body .table tbody tr td .btn-group-inline .btn.btn-delete:hover {
+  background-color: darkred;
+  color: white;
+}

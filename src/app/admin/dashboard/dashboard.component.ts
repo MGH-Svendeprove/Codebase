@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   messageStatus: boolean = false;
   subscription: any;
   reportsCount: any = '';
+  accountCount: any = '';
+  postCount: any = '';
 
   constructor(private api: ApiService, private auth: AuthService, private router: Router, private route: ActivatedRoute) {
   }
@@ -25,6 +27,8 @@ export class DashboardComponent implements OnInit {
     this.subscription = timer(0,2000).subscribe(sb => {
       this.getNewestReports();
       this.countReports();
+      this.countAccounts();
+      this.countPosts();
     })
   }
 
@@ -32,6 +36,18 @@ export class DashboardComponent implements OnInit {
     this.api.countAllReports().subscribe(c => {
       this.reportsCount = c;
     });
+  }
+
+  countAccounts() {
+    this.api.countAccounts().subscribe(a => {
+      this.accountCount = a;
+    });
+  }
+
+  countPosts() {
+    this.api.countAllPosts().subscribe(p => {
+      this.postCount = p;
+    })
   }
 
   getNewestReports() {

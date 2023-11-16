@@ -37,7 +37,9 @@ export class ReportsComponent implements OnInit {
   report: Ireport = {};
   paperIsActive: boolean = false;
   modalIsActive: boolean = false;
+  deleteIsActive: boolean = false;
   reported:string = 'yes';
+  account: Iaccount = {};
 
   editForm = new FormGroup({
     post_id: new FormControl(),
@@ -49,6 +51,15 @@ export class ReportsComponent implements OnInit {
     report_id: new FormControl(),
     reported: new FormControl()
   });
+
+  deleteForm = new FormGroup({
+    post_id: new FormControl(),
+    email: new FormControl(),
+    report_id: new FormControl(),
+    reported: new FormControl(),
+    subject: new FormControl(),
+    message: new FormControl()
+  })
 
   constructor(private api: ApiService, private auth: AuthService, private router: Router, private route: ActivatedRoute) {
   }
@@ -114,6 +125,10 @@ export class ReportsComponent implements OnInit {
     this.modalIsActive = !this.modalIsActive;
   }
 
+  closeDeleteModal() {
+    this.deleteIsActive = !this.deleteIsActive;
+  }
+
   insertSnippet(value: string) {
     const contentControl = this.editForm.controls.content;
     const curPos = contentControl.value.slice(0, contentControl.value.selectionStart);
@@ -151,4 +166,63 @@ export class ReportsComponent implements OnInit {
     });
   }
 
+  deletePost(event: any) {
+    let p: Ipost = {
+      post_id: event.getAttribute('id'),
+    }
+
+    let r: Ireport = {
+      report_id: event.getAttribute('title'),
+      reported: this.reported
+    }
+
+    this.api.selectSinglePost(p).subscribe(data => {
+      this.post = data;
+      let usr: Iaccount = {
+        account_id: data.account_id
+      }
+      this.api.getAccount(usr).subscribe(acc => {
+        this.account = acc;
+        this.deleteForm.patchValue({
+          post_id: data.post_id,
+          report_id: r.report_id,
+          reported: r.reported,
+          email: acc.email
+        });
+      });
+      this.deleteIsActive = !this.deleteIsActive;
+    });
+  }
+
+  deleteHandler(formObj: any) {
+    let p: Ipost = {
+      post_id: formObj.post_id
+    }
+
+    let r: Ireport = {
+      report_id: formObj.report_id,
+      reported: formObj.reported,
+      statusCode: 3
+    }
+
+    let formData = new FormData();
+    formData.append('email', formObj.email);
+    formData.append('subject', formObj.subject);
+    formData.append('message', formObj.message);
+    formData.append('report_id', r.report_id);
+    formData.append('reported', r.reported);
+    formData.append('statusCode', r.statusCode);
+
+    console.log(r);
+
+    this.api.sendmail(formData).subscribe(em => {
+      console.log(em);
+    });
+    this.api.updateReport(formData).subscribe(rep => {
+      this.api.deletePost(p).subscribe(pos => {
+        this.deleteIsActive = !this.deleteIsActive;
+        window.location.reload();
+      });
+    });
+  }
 }

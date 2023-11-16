@@ -5,7 +5,7 @@
       <a routerLink="./" class="navbar-item">Home</a>
       <a routerLink="categories" class="navbar-item">Categories</a>
       <a routerLink="howto" class="navbar-item">How to</a>
-      <a routerLink="../admin" target="_blank" class="navbar-item" *ngIf="role === 'Admin' || role === 'Modetator'">Admin</a>
+      <a routerLink="../admin" target="_blank" class="navbar-item" *ngIf="role === 'Admin' || role === 'Moderator'">Admin</a>
       <span class="navbar-item" (click)="showDropdown()">
         <img src="{{picturePath}}{{account.picture}}" class="account-picture"><i class="fa fa-chevron-down"></i>
         <div class="dropdown" [ngClass]="{'show': isVisible}">

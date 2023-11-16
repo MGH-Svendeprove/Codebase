@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><i class="fa fa-users"></i><span class="card-text">Account Administration</span></div>
+      <div class="card-form" [ngClass]="{'show': isActive}">
+        <form [formGroup]="updateForm">
+          <input type="hidden" formControlName="account_id">
+        <div class="form-group-inline">
+          <label>Username:</label><span>{{account.username}}</span>
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <select formControlName="role_id">
+            <option *ngFor="let rol of roles" value="{{rol.role_id}}">{{rol.role_title}}</option>
+          </select>
+        </div>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-update" (click)="updateHandler(updateForm.value)">Update Role</button>
+            <button type="button" class="btn btn-close" (click)="closeUpdateForm()">Close Update</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Picture</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of accounts">
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.picture}}</td>
+            <td>{{item.role}}</td>
+            <td><span class="table-link" #update data-id="{{item.account_id}}" (click)="updateRole(update)">Edit Role</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

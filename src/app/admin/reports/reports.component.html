@@ -32,7 +32,7 @@
               <div class="btn-group-inline">
                 <button type="button" class="btn btn-view" #view data-id="{{item.post_id}}" (click)="getSinglePost(view)"><i class="fa fa-eye"></i></button>
                 <button type="button" class="btn btn-edit" #edit data-id="{{item.post_id}}" data-title="{{item.report_id}}" (click)="editSinglePost(edit)"><i class="fa fa-pencil"></i></button>
-                <button type="button" class="btn btn-delete"><i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-delete" #delete data-id="{{item.post_id}}" data-title="{{item.report_id}}" (click)="deletePost(delete)"><i class="fa fa-trash"></i></button>
               </div>
             </td>
           </tr>
@@ -58,13 +58,12 @@
 <div class="modal-wrapper" id="modal" [ngClass]="{'modal-show': modalIsActive}">
   <div class="create-modal">
     <form [formGroup]="editForm">
-      <input type="text" formControlName="post_id">
-      <input type="text" formControlName="account_id">
-      <input type="text" formControlName="report_id">
-      <input type="text" formControlName="reported" [value]="">
+      <input type="hidden" formControlName="post_id">
+      <input type="hidden" formControlName="account_id">
+      <input type="hidden" formControlName="report_id">
+      <input type="hidden" formControlName="reported" [value]="">
       <div class="modal-header">Modify Forum Post</div>
       <div class="modal-body">
-        <input type="hidden" formControlName="post_id">
         <div class="form-group">
           <label>Subject</label>
           <input type="text" formControlName="subject" class="form-control">
@@ -89,6 +88,32 @@
       <div class="modal-footer">
         <button type="submit" (click)="updateHandler(editForm.value)" class="btn btn-create">Modify Post</button>
         <button type="reset" (click)="closeModal()" class="btn btn-cancel">Close Modal</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-wrapper" id="delete" [ngClass]="{'modal-show': deleteIsActive}">
+  <div class="create-modal">
+    <form [formGroup]="deleteForm">
+      <input type="hidden" formControlName="post_id">
+      <input type="hidden" formControlName="email">
+      <input type="hidden" formControlName="report_id">
+      <input type="hidden" formControlName="reported">
+      <div class="modal-header">Delete Forum Post</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" formControlName="subject" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea formControlName="message" id="message" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="deleteHandler(deleteForm.value)" class="btn btn-create">Delete Post</button>
+        <button type="reset" (click)="closeDeleteModal()" class="btn btn-cancel">Close Modal</button>
       </div>
     </form>
   </div>

@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header"><i class="fa fa-folder-open"></i> Category Administration</div>
+      <div class="card-toolbar">
+        <i class="fa fa-plus toolbar-item" (click)="showCardForm()"></i>
+      </div>
+      <div class="card-form" [ngClass]="{'show': isActive}">
+        <form [formGroup]="categoryForm">
+          <input type="hidden" formControlName="category_id">
+          <div class="form-group">
+            <label>Category Title</label>
+            <input type="text" formControlName="cat_title" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Category Logo</label>
+            <input type="file" formControlName="cat_picture" (change)="onSelectedFile($event)" class="form-control">
+          </div>
+          <div class="btn-group">
+            <button type="submit" class="btn" [ngClass]="{'btn-update': isEdit, 'btn-create': !isEdit}" (click)="formHandler(categoryForm.value)">{{isEdit ? 'Update' : 'Create'}}</button>
+            <button type="button" class="btn btn-close" (click)="closeCardForm()">Close Form</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Category Title</th>
+            <th>Category Logo</th>
+            <th>Logo</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of categories">
+            <td>{{item.cat_title}}</td>
+            <td>{{item.cat_picture}}</td>
+            <td><img src="{{picturePath}}categories/{{item.cat_picture}}" class="logo"></td>
+            <td>
+              <div class="btn-group-inline">
+                <span class="table-link" #edit data-id="{{item.category_id}}" (click)="editCategory(edit)">Edit Category</span>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

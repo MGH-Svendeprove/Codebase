@@ -17,12 +17,14 @@ export class AdminHeaderComponent implements OnInit {
   isUserInfoActive: boolean = false;
   reportsNumber: any = 0;
   subscription: any;
+  role: any = '';
 
   constructor(private api: ApiService, private auth: AuthService) {
   }
 
   ngOnInit() {
     this.getAccountData();
+    this.role = this.auth.role;
     this.subscription = timer(0, 2000).subscribe(total => {
       this.getReportsNumber();
     });

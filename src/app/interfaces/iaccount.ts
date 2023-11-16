@@ -4,7 +4,8 @@ export interface Iaccount {
   password?: string;
   email?: string;
   picture?: string;
-  role_id?: number | null| undefined;
+  role_id?: any;
+  role?: string;
   member_since?: string;
   message?: string;
 }

@@ -25,6 +25,8 @@ import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminHeaderComponent } from './admin/inc/admin-header/admin-header.component';
 import { ReportsComponent } from './admin/reports/reports.component';
+import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
+import { AdminAccountsComponent } from './admin/admin-accounts/admin-accounts.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { ReportsComponent } from './admin/reports/reports.component';
     AdminComponent,
     DashboardComponent,
     AdminHeaderComponent,
-    ReportsComponent
+    ReportsComponent,
+    AdminCategoriesComponent,
+    AdminAccountsComponent
   ],
   imports: [
     BrowserModule,
