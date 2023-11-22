@@ -159,7 +159,7 @@ export class ApiService {
   }
 
   sendmail(data: any) {
-    return this.http.post(this.baseURL + 'report/sendmail.php', data);
+    return this.http.post(this.baseURL + 'reports/sendmail.php', data);
   }
 
 }
