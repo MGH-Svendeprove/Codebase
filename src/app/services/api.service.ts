@@ -27,7 +27,9 @@ export class ApiService {
     Here we have the login part of the API service
    */
   login(login:Ilogin): Observable<Itoken> {
-    return this.http.get<Itoken>(this.baseURL + 'login/login.php?email='+login.email+'&password='+login.password);
+    return this.http.get<Itoken>(this.baseURL +
+      'login/login.php?email=' +login.email+
+      '&password='+login.password);
   }
 
   /*
